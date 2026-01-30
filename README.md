@@ -8,8 +8,11 @@ This repository analyzes Aadhaar Biometric, Demographic, and Enrolment datasets 
 .
 ├── aadhaar_analysis.ipynb          # Main analysis notebook
 ├── api_data_aadhar_biometric/      # Biometric update CSVs
+│   └── api_data_aadhar_biometric/*.csv
 ├── api_data_aadhar_demographic/    # Demographic update CSVs
+│   └── api_data_aadhar_demographic/*.csv
 ├── api_data_aadhar_enrolment/      # Enrolment CSVs
+│   └── api_data_aadhar_enrolment/*.csv
 └── Output/                         # Saved visualization outputs
     ├── Univariate_Analysis/
     ├── Bivariate_Analysis/
@@ -55,6 +58,8 @@ The notebook models the Aadhaar lifecycle as a data journey from enrolment to up
    jupyter notebook aadhaar_analysis.ipynb
    ```
 3. Update the `BASE_DIR` in the notebook to your local repository path so the CSV glob paths resolve correctly.
+   - The notebook expects the nested data paths shown above.
+   - `OUTPUT_DIR` is defined as `analysis_output`, but the charts are saved to the `Output/` directory in the current code.
 
 ## Outputs
 
@@ -62,6 +67,7 @@ Generated charts are stored in `Output/`, including:
 - Univariate summaries (total enrolments, total state volume)
 - Bivariate analysis (cross-sectional comparisons)
 - Trivariate analysis (multi-dimensional trends)
+  - Some filenames use the spelling `enrolement` to match the notebook outputs.
 
 ## Notes
 
